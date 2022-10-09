@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+ <div>
+	
+	</div>
+	{{ prediction_text }}<br><br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="age" required="required" />
+    	<input type="text" name="sex" placeholder="sex" required="required" />
+    	<input type="text" name="on_thyroxine" placeholder="on_thyroxine" required="required" />
+    	<input type="text" name="query_on_thyroxine" placeholder="query_on_thyroxine" required="required" />
+    	<input type="text" name="on_antithyroid_meds" placeholder="on_antithyroid_meds" required="required" />
+    	<input type="text" name="sick" placeholder="sick" required="required" />
+    	<input type="text" name="pregnant" placeholder="pregnant" required="required" />
+    	<input type="text" name="thyroid_surgery" placeholder="thyroid_surgery" required="required" />
+    	<input type="text" name="I131_treatment" placeholder="I131_treatment" required="required" />
+    	<input type="text" name="query_hypothyroid" placeholder="query_hypothyroid" required="required" />
+    	<input type="text" name="query_hyperthyroid" placeholder="query_hyperthyroid" required="required" />
+    	<input type="text" name="lithium" placeholder="lithium" required="required" />
+    	<input type="text" name="goitre" placeholder="goitre" required="required" />
+    	<input type="text" name="tumor" placeholder="tumor" required="required" />
+    	<input type="text" name="hypopituitary" placeholder="hypopituitary" required="required" />
+    	<input type="text" name="psych" placeholder="psychpsych" required="required" />
+    	<input type="text" name="TSH" placeholder="TSH" required="required" />
+    	<input type="text" name="T3" placeholder="T3" required="required" />
+    	<input type="text" name="TT4" placeholder="TT4" required="required" />
+    	<input type="text" name="T4U" placeholder="T4U" required="required" />
+    	<input type="text" name="FTI" placeholder="FTI" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   
+
+ </div>
+
+
+</body>
+</html>

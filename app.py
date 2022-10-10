@@ -73,7 +73,9 @@ def predict():
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     
-    # data = request.get_json(force=True)
+    data = request.get_json(force=True)
+    
+    
     
     # age = data['age']
     # sex = data['sex']
@@ -125,7 +127,7 @@ def predict_api():
     # prediction = model.predict(pd.DataFrame(data))
     
     # output = prediction[0]
-    output = 1
+    output = data
     return jsonify(output)
 
 if __name__ == '__main__':

@@ -77,58 +77,59 @@ def predict_api():
     
     
     
-    # age = data['age']
-    # sex = data['sex']
-    # on_thyroxine = data['on_thyroxine']
-    # query_on_thyroxine = data['query_on_thyroxine']
-    # on_antithyroid_meds = data['on_antithyroid_meds']
-    # sick = data['sick'],
-    # pregnant = data['pregnant']
-    # thyroid_surgery = data['thyroid_surgery']
-    # I131_treatment = data['I131_treatment']
-    # query_hypothyroid = data['query_hypothyroid']
-    # query_hyperthyroid = data['query_hyperthyroid']
-    # lithium = data['lithium']
-    # goitre = data['goitre']
-    # tumor = data['tumor']
-    # hypopituitary = data['hypopituitary']
-    # psych = data['psych']
-    # TSH = data['TSH']
-    # T3 = data['T3']
-    # TT4 = data['TT4']
-    # T4U = data['T4U']
-    # FT = data['FTI']
+    age = data['age']
+    sex = data['sex']
+    on_thyroxine = data['on_thyroxine']
+    query_on_thyroxine = data['query_on_thyroxine']
+    on_antithyroid_meds = data['on_antithyroid_meds']
+    sick = data['sick']
+    pregnant = data['pregnant']
+    thyroid_surgery = data['thyroid_surgery']
+    I131_treatment = data['I131_treatment']
+    query_hypothyroid = data['query_hypothyroid']
+    query_hyperthyroid = data['query_hyperthyroid']
+    lithium = data['lithium']
+    goitre = data['goitre']
+    tumor = data['tumor']
+    hypopituitary = data['hypopituitary']
+    psych = data['psych']
+    TSH = data['TSH']
+    T3 = data['T3']
+    TT4 = data['TT4']
+    T4U = data['T4U']
+    FTI = data['FTI']
     
-    # data_dict = {
-    #     'age':age,
-    #     'sex':sex,
-    #     'on_thyroxine':on_thyroxine,
-    #     'query_on_thyroxine':query_on_thyroxine,
-    #     'on_antithyroid_meds':on_antithyroid_meds,
-    #     'sick':sick,
-    #     'pregnant':pregnant,
-    #     'thyroid_surgery':thyroid_surgery,
-    #     'I131_treatment':I131_treatment,
-    #     'query_hypothyroid':query_hypothyroid,
-    #     'query_hyperthyroid':query_hyperthyroid,
-    #     'lithium':lithium,
-    #     'goitre':goitre,
-    #     'tumor':tumor,
-    #     'hypopituitary':hypopituitary,
-    #     'psych':psych,
-    #     'TSH':TSH,
-    #     'T3':T3,
-    #     'TT4':TT4,
-    #     'T4U':T4U,
-    #     'FTI':FTI
-    # }
+    data_dict = {
+        'age':age,
+        'sex':sex,
+        'on_thyroxine':on_thyroxine,
+        'query_on_thyroxine':query_on_thyroxine,
+        'on_antithyroid_meds':on_antithyroid_meds,
+        'sick':sick,
+        'pregnant':pregnant,
+        'thyroid_surgery':thyroid_surgery,
+        'I131_treatment':I131_treatment,
+        'query_hypothyroid':query_hypothyroid,
+        'query_hyperthyroid':query_hyperthyroid,
+        'lithium':lithium,
+        'goitre':goitre,
+        'tumor':tumor,
+        'hypopituitary':hypopituitary,
+        'psych':psych,
+        'TSH':TSH,
+        'T3':T3,
+        'TT4':TT4,
+        'T4U':T4U,
+        'FTI':FTI
+    }
     
-    # data = {k:[v] for k,v in data_dict.items()}
-    # prediction = model.predict(pd.DataFrame(data))
+    data = {k:[v] for k,v in data_dict.items()}
+    prediction = model.predict(pd.DataFrame(data))
     
     # output = prediction[0]
     output = data
-    return jsonify(output)
+    return output
+    # return jsonify(output)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
